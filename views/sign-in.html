@@ -1,0 +1,24 @@
+<dialog open>
+<article>
+  <header>
+    <div class="grid">
+      Login de Usuario 
+      <span style="text-align:right;">
+        <a href="./sign-up">Ir a Registro</a>
+      </span>      
+    </div>    
+  </header>
+  
+{{#if isError}}
+  <p style="color:red">{{mensaje}}</p>
+{{/if}}
+{{#if isOk}}
+  <p style="color:green">{{mensaje}}</p>
+{{/if}}
+<form action="/api/auth/sign-in" method="POST">
+  <input name="email" id="email" type="text" placeholder="ingrese su nombre..." required />
+  <input name="password" id="password" type="password" placeholder="ingrese su password.." required />
+  <button type="submit">Enviar</button>  
+</form>
+</article>
+</dialog>

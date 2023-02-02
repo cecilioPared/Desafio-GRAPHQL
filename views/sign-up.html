@@ -1,0 +1,28 @@
+<dialog open>
+<article>  
+  <header>
+    <div class="grid">
+      Registro de Usuario
+      <span style="text-align:right;">
+        <a href="./sign-in">Ir a Login</a>
+      </span>      
+    </div>    
+  </header>
+  {{#if isError}}
+  <p style="color:red">{{mensaje}}</p>
+{{/if}}
+{{#if isOk}}
+  <p style="color:green">{{mensaje}}</p>
+{{/if}}
+<form action="/api/auth/sign-up" method="POST">
+  <input name="email" id="email" type="email" placeholder="ingrese su email..." required />
+  <input name="password" id="password" type="password" placeholder="ingrese su password.." required />
+  <input name="nombre" id="nombre" type="text" placeholder="ingrese su nombre..." required />
+  <input name="direccion" id="direccion" type="text" placeholder="ingrese su domicilio..." required />
+  <input name="telefono" id="telefono" type="text" placeholder="ingrese su telefono..." required />
+  <input name="edad" id="edad" type="number" placeholder="ingrese su edad..." required />
+  <input id='filename'  type='file' name='filename' placeholder='Ingrese su Avatar' required />
+  <button type="submit">Crear usuario</button>  
+</form>
+</article>
+</dialog>

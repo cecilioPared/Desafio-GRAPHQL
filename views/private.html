@@ -1,0 +1,22 @@
+<article>
+  <section id="sigin">
+    <div class="grid">
+      <h4>Bienvenido {{username}}</h4>
+      <button type="button" onclick="logout()">Logout</button>
+    </div>
+  </section>
+
+  <section id="loading" style="display: none; text-align: center">
+    <h1 aria-busy="true">Hasta luego {{username}}</h1>
+  </section>
+</article>
+
+<script>
+  function logout() {
+    document.getElementById("loading").style.display = "block";
+    document.getElementById("sigin").style.display = "none";
+    setTimeout(() => {
+      window.location.href = "/sign-in";
+    }, 2000);
+  }
+</script>
